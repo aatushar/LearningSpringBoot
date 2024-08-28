@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "4cc75c03-1181-400a-9add-41f19e5de84e",
+		"name": "E Commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32600527"
+	},
+	"item": [
+		{
+			"name": "Purchase Requsition",
+			"item": [
+				{
+					"name": "View (Get One Purchase)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/indent/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"indent",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert( Master )",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requisitionNumber\": \"REQ-001\",\r\n    \"companyId\": 1,\r\n    \"branchId\": 1,\r\n    \"storeId\": 2,\r\n    \"prodTypeId\": 3,\r\n    \"masterGroupId\": 4,\r\n    \"requisitionDate\": \"2024-07-28\",\r\n    \"submittedBy\": 5,\r\n    \"recommendedBy\": 6,\r\n    \"approvedBy\": 7,\r\n    \"isPurReqClosed\": true,\r\n    \"remarks\": \"Test remarks\",\r\n    \"remarksBn\": \"টেস্ট মন্তব্য\",\r\n    \"createdBy\": 1, // Add this field\r\n    \"prodReq\": [\r\n        {\r\n            \"indentChildId\": 1,\r\n            \"itemInfoId\": 1,\r\n            \"requisitionQuantity\": 5.00\r\n        },\r\n        {\r\n            \"indentChildId\": 2,\r\n            \"itemInfoId\": 2,\r\n            \"requisitionQuantity\": 5.00\r\n        }\r\n    ],\r\n    \"child\": [\r\n        {\r\n            \"itemInfoId\": 1,\r\n            \"uomId\": 2,\r\n            \"relativeFactor\": 1.5,\r\n            \"rate\": 100.00,\r\n            \"reqQuantity\": 10.00,\r\n            \"requiredDate\": \"2024-08-01\",\r\n            \"remarks\": \"Item 1 remarks\",\r\n            \"remarksBn\": \"আইটেম ১ মন্তব্য\"\r\n        },\r\n        {\r\n            \"itemInfoId\": 2,\r\n            \"uomId\": 2,\r\n            \"relativeFactor\": 1.5,\r\n            \"rate\": 100.00,\r\n            \"reqQuantity\": 10.00,\r\n            \"requiredDate\": \"2024-08-01\",\r\n            \"remarks\": \"Item 1 remarks\",\r\n            \"remarksBn\": \"আইটেম ১ মন্তব্য\"\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/demomaster/insert",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"demomaster",
+								"insert"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Index (MaterList - get All)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Base_url",
+								"value": "http://localhost:8989",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/master/list?storeId=2&sortDirection=asc&filter=&pageNo=1&pageSize=5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"master",
+								"list"
+							],
+							"query": [
+								{
+									"key": "storeId",
+									"value": "2"
+								},
+								{
+									"key": "sortDirection",
+									"value": "asc"
+								},
+								{
+									"key": "filter",
+									"value": ""
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Poduct Requisition",
+			"item": [
+				{
+					"name": "Index(indent mster list-get All)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderMasterId\": 1,\r\n    \"indentNumber\": \"IND-001\",\r\n    \"indentDate\": \"2024-07-25T00:00:00\",\r\n    \"isProductReq\": true,\r\n    \"companyId\": 1,\r\n    \"branchId\": 1,\r\n    \"prodTypeId\": 2,\r\n    \"masterGroupId\": 5,\r\n    \"demandStoreId\": 2,\r\n    \"toStoreId\": 3,\r\n    \"deptId\": 3,\r\n    \"purpose\": \"Office Supplies\",\r\n    \"remarks\": \"Urgent Order\",\r\n    \"remarksBn\": \"অতিব জরুরি আদেশ\",\r\n    \"submittedBy\": 1,\r\n    \"submittedAt\": \"2024-07-25T12:00:00\",\r\n    \"recommendedBy\": 2,\r\n    \"recommendedAt\": \"2024-07-26T12:00:00\",\r\n    \"approvedBy\": 1,\r\n    \"approvedAt\": \"2024-07-27T12:00:00\",\r\n    \"approvedStatus\": true,\r\n    \"isForIssue\": true,\r\n    \"isIssued\": false,\r\n    \"isForPurchase\": true,\r\n    \"isIndentClosed\": false,\r\n    \"isProReqClose\": false,\r\n    \"child\": [\r\n        {\r\n            \"itemInfoId\": 1,\r\n            \"uomId\": 10,\r\n            \"uomShortCode\": \"Pcs\",\r\n            \"relativeFactor\": 1.0,\r\n            \"indentQuantity\": 100,\r\n            \"consumOrderQty\": 50,\r\n            \"remarks\": \"Critical Item\"\r\n        },\r\n        {\r\n            \"itemInfoId\": 2,\r\n            \"uomId\": 12,\r\n            \"uomShortCode\": \"Box\",\r\n            \"relativeFactor\": 0.5,\r\n            \"indentQuantity\": 200,\r\n            \"consumOrderQty\": 75,\r\n            \"remarks\": \"For New Project\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/indentmaster/list?storeId=3&dbFieldName=id&sortDirection=desc&filter=IND-001&pageNo=0&pageSize=10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"indentmaster",
+								"list"
+							],
+							"query": [
+								{
+									"key": "storeId",
+									"value": "3"
+								},
+								{
+									"key": "dbFieldName",
+									"value": "id"
+								},
+								{
+									"key": "sortDirection",
+									"value": "desc"
+								},
+								{
+									"key": "filter",
+									"value": "IND-001"
+								},
+								{
+									"key": "pageNo",
+									"value": "0"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderMasterId\": 1,\r\n    \"indentNumber\": \"IND-001\",\r\n    \"indentDate\": \"2024-07-25T00:00:00\",\r\n    \"isProductReq\": true,\r\n    \"companyId\": 1,\r\n    \"branchId\": 1,\r\n    \"prodTypeId\": 2,\r\n    \"masterGroupId\": 5,\r\n    \"demandStoreId\": 2,\r\n    \"toStoreId\": 3,\r\n    \"deptId\": 3,\r\n    \"purpose\": \"Office Supplies\",\r\n    \"remarks\": \"Urgent Order\",\r\n    \"remarksBn\": \"অতিব জরুরি আদেশ\",\r\n    \"submittedBy\": 1,\r\n    \"submittedAt\": \"2024-07-25T12:00:00\",\r\n    \"recommendedBy\": 2,\r\n    \"recommendedAt\": \"2024-07-26T12:00:00\",\r\n    \"approvedBy\": 1,\r\n    \"approvedAt\": \"2024-07-27T12:00:00\",\r\n    \"approvedStatus\": true,\r\n    \"isForIssue\": true,\r\n    \"isIssued\": false,\r\n    \"isForPurchase\": true,\r\n    \"isIndentClosed\": false,\r\n    \"isProReqClose\": false,\r\n    \"child\": [\r\n        {\r\n            \"itemInfoId\": 1,\r\n            \"uomId\": 10,\r\n            \"uomShortCode\": \"Pcs\",\r\n            \"relativeFactor\": 1.0,\r\n            \"indentQuantity\": 100,\r\n            \"consumOrderQty\": 50,\r\n            \"remarks\": \"Critical Item\"\r\n        },\r\n        {\r\n            \"itemInfoId\": 2,\r\n            \"uomId\": 12,\r\n            \"uomShortCode\": \"Box\",\r\n            \"relativeFactor\": 0.5,\r\n            \"indentQuantity\": 200,\r\n            \"consumOrderQty\": 75,\r\n            \"remarks\": \"For New Project\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/indent/insert",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"indent",
+								"insert"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View (Indent boss -Get one)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderMasterId\": 1,\r\n    \"indentNumber\": \"IND-001\",\r\n    \"indentDate\": \"2024-07-25T00:00:00\",\r\n    \"isProductReq\": true,\r\n    \"companyId\": 1,\r\n    \"branchId\": 1,\r\n    \"prodTypeId\": 2,\r\n    \"masterGroupId\": 5,\r\n    \"demandStoreId\": 2,\r\n    \"toStoreId\": 3,\r\n    \"deptId\": 3,\r\n    \"purpose\": \"Office Supplies\",\r\n    \"remarks\": \"Urgent Order\",\r\n    \"remarksBn\": \"অতিব জরুরি আদেশ\",\r\n    \"submittedBy\": 1,\r\n    \"submittedAt\": \"2024-07-25T12:00:00\",\r\n    \"recommendedBy\": 2,\r\n    \"recommendedAt\": \"2024-07-26T12:00:00\",\r\n    \"approvedBy\": 1,\r\n    \"approvedAt\": \"2024-07-27T12:00:00\",\r\n    \"approvedStatus\": true,\r\n    \"isForIssue\": true,\r\n    \"isIssued\": false,\r\n    \"isForPurchase\": true,\r\n    \"isIndentClosed\": false,\r\n    \"isProReqClose\": false,\r\n    \"child\": [\r\n        {\r\n            \"itemInfoId\": 1,\r\n            \"uomId\": 10,\r\n            \"uomShortCode\": \"Pcs\",\r\n            \"relativeFactor\": 1.0,\r\n            \"indentQuantity\": 100,\r\n            \"consumOrderQty\": 50,\r\n            \"remarks\": \"Critical Item\"\r\n        },\r\n        {\r\n            \"itemInfoId\": 2,\r\n            \"uomId\": 12,\r\n            \"uomShortCode\": \"Box\",\r\n            \"relativeFactor\": 0.5,\r\n            \"indentQuantity\": 200,\r\n            \"consumOrderQty\": 75,\r\n            \"remarks\": \"For New Project\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/indentboss/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"indentboss",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Purchase Order",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/purchaseOrder/list?storeId=3&dbFieldName=id&sortDirection=desc&filter=&pageNo=1&pageSize=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"purchaseOrder",
+								"list"
+							],
+							"query": [
+								{
+									"key": "storeId",
+									"value": "3"
+								},
+								{
+									"key": "dbFieldName",
+									"value": "id"
+								},
+								{
+									"key": "sortDirection",
+									"value": "desc"
+								},
+								{
+									"key": "filter",
+									"value": ""
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "{{baseurl}}",
+			"value": "http://localhost:8989"
+		}
+	]
+}
