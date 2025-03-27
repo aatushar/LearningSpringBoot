@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 9.0.0.final using JasperReports Library version 6.21.0-4f56c4f36cd19e17675219a9ac4692d5f0f13b06  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Attendance_report" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eb2377f8-d26f-45d4-aa58-c3a6a72c7532">
+    <parameter name="workDate" class="java.lang.String"/>
+    <field name="id" class="java.lang.Long">
+        <property name="com.jaspersoft.studio.field.name" value="id"/>
+        <property name="com.jaspersoft.studio.field.label" value="ID"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="ConReport"/>
+    </field>
+    <field name="employeeName" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="employeeName"/>
+        <property name="com.jaspersoft.studio.field.label" value="employeeName"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="ConReport"/>
+    </field>
+    <field name="workDate" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="workDate"/>
+        <property name="com.jaspersoft.studio.field.label" value="workDate"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="ConReport"/>
+    </field>
+    <field name="punchInTime" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="punchInTime"/>
+        <property name="com.jaspersoft.studio.field.label" value="punchInTime"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="ConReport"/>
+    </field>
+    <field name="approvedPunchInTime" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="approvedPunchInTime"/>
+        <property name="com.jaspersoft.studio.field.label" value="approvedPunchInTime"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="ConReport"/>
+    </field>
+    <field name="punchOutTime" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="punchOutTime"/>
+        <property name="com.jaspersoft.studio.field.label" value="punchOutTime"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="ConReport"/>
+    </field>
+    <field name="approvedPunchOutTime" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="approvedPunchOutTime"/>
+        <property name="com.jaspersoft.studio.field.label" value="approvedPunchOutTime"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="ConReport"/>
+    </field>
+    <field name="isLate" class="java.lang.Boolean">
+        <property name="com.jaspersoft.studio.field.name" value="isLate"/>
+        <property name="com.jaspersoft.studio.field.label" value="isLate"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="ConReport"/>
+    </field>
+    <field name="isExtremeLate" class="java.lang.Boolean">
+        <property name="com.jaspersoft.studio.field.name" value="isExtremeLate"/>
+        <property name="com.jaspersoft.studio.field.label" value="isExtremeLate"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="ConReport"/>
+    </field>
+    <field name="attendanceDayStatusId" class="java.lang.Long">
+        <property name="com.jaspersoft.studio.field.name" value="attendanceDayStatusId"/>
+        <property name="com.jaspersoft.studio.field.label" value="attendanceDayStatusId"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="ConReport"/>
+    </field>
+    <field name="dayStatusFullName" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="dayStatusFullName"/>
+        <property name="com.jaspersoft.studio.field.label" value="dayStatusFullName"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="ConReport"/>
+    </field>
+    <field name="dayTypeId" class="java.lang.Long">
+        <property name="com.jaspersoft.studio.field.name" value="dayTypeId"/>
+        <property name="com.jaspersoft.studio.field.label" value="dayTypeId"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="ConReport"/>
+    </field>
+    <field name="workDayTypeName" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="workDayTypeName"/>
+        <property name="com.jaspersoft.studio.field.label" value="workDayTypeName"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="ConReport"/>
+    </field>
+    <field name="remarks" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="remarks"/>
+        <property name="com.jaspersoft.studio.field.label" value="remarks"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="ConReport"/>
+    </field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="72" splitType="Stretch">
+            <staticText>
+                <reportElement x="310" y="40" width="200" height="30" forecolor="#058FFF" uuid="5d06f0d2-4369-4e6d-aa6e-f11a91ffe693"/>
+                <textElement>
+                    <font size="16"/>
+                </textElement>
+                <text><![CDATA[Employee Daily Attendance]]></text>
+            </staticText>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="21" splitType="Stretch">
+            <textField textAdjust="ScaleFont" isBlankWhenNull="true">
+                <reportElement mode="Opaque" x="40" y="0" width="170" height="20" backcolor="rgba(25, 127, 252, 0.29411766)" uuid="5c150b23-375d-45c3-ba04-7564090715d1">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <box leftPadding="2"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{workDate}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement mode="Opaque" x="0" y="0" width="39" height="20" backcolor="rgba(25, 127, 252, 0.29411766)" uuid="e25900b8-d84f-4a5e-960d-172b9eea9849">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <box leftPadding="2"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Date:]]></text>
+            </staticText>
+        </band>
+    </pageHeader>
+    <columnHeader>
+        <band height="19" splitType="Stretch">
+            <staticText>
+                <reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="560" y="1" width="70" height="18" isPrintWhenDetailOverflows="true" forecolor="#FFFFFF" backcolor="#0DAEFF" uuid="ad57eb61-8de2-4152-a977-c56e98350944">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman" isBold="true"/>
+                </textElement>
+                <text><![CDATA[EX. LATE]]></text>
+            </staticText>
+            <staticText>
+                <reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="420" y="1" width="70" height="18" isPrintWhenDetailOverflows="true" forecolor="#FFFFFF" backcolor="#0DAEFF" uuid="4ade1eb3-d35a-46be-aa8b-26a52487a2d3">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman" isBold="true"/>
+                </textElement>
+                <text><![CDATA[APPROVED]]></text>
+            </staticText>
+            <staticText>
+                <reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="490" y="1" width="70" height="18" isPrintWhenDetailOverflows="true" forecolor="#FFFFFF" backcolor="#0DAEFF" uuid="ce99adaa-3ea1-4434-8cd6-9a1062652099">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman" isBold="true"/>
+                </textElement>
+                <text><![CDATA[LATE]]></text>
+            </staticText>
+            <staticText>
+                <reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="40" y="1" width="170" height="18" isPrintWhenDetailOverflows="true" forecolor="#FFFFFF" backcolor="#0DAEFF" uuid="8f65dcea-3f99-4cd0-9534-1c5fbaf25222">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman" isBold="true"/>
+                </textElement>
+                <text><![CDATA[NAME]]></text>
+            </staticText>
+            <staticText>
+                <reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="700" y="1" width="100" height="18" isPrintWhenDetailOverflows="true" forecolor="#FFFFFF" backcolor="#0DAEFF" uuid="d6b04be5-1ef9-497e-9be9-2a9b86d34bb6">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman" isBold="true"/>
+                </textElement>
+                <text><![CDATA[W. MINUTES]]></text>
+            </staticText>
+            <staticText>
+                <reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="630" y="1" width="70" height="18" isPrintWhenDetailOverflows="true" forecolor="#FFFFFF" backcolor="#0DAEFF" uuid="fd957cc0-895f-4668-9412-057d928ede04">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman" isBold="true"/>
+                </textElement>
+                <text><![CDATA[STATUS]]></text>
+            </staticText>
+            <staticText>
+                <reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="350" y="1" width="70" height="18" isPrintWhenDetailOverflows="true" forecolor="#FFFFFF" backcolor="#0DAEFF" uuid="cac74434-df4f-4b22-ac5d-f6e2a5275497">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman" isBold="true"/>
+                </textElement>
+                <text><![CDATA[OUT TIME]]></text>
+            </staticText>
+            <staticText>
+                <reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="0" y="1" width="40" height="18" isPrintWhenDetailOverflows="true" forecolor="#FFFFFF" backcolor="#0DAEFF" uuid="4ded3500-e1e7-42c0-978c-9045953d3473">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman" isBold="true"/>
+                </textElement>
+                <text><![CDATA[SL]]></text>
+            </staticText>
+            <staticText>
+                <reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="210" y="1" width="70" height="18" isPrintWhenDetailOverflows="true" forecolor="#FFFFFF" backcolor="#0DAEFF" uuid="0a9b7028-83db-4f5f-9f6f-1072d0b4a1ae">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman" isBold="true"/>
+                </textElement>
+                <text><![CDATA[IN TIME]]></text>
+            </staticText>
+            <staticText>
+                <reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="280" y="1" width="70" height="18" isPrintWhenDetailOverflows="true" forecolor="#FFFFFF" backcolor="#0DAEFF" uuid="30668cce-603f-4676-b755-754fc665d952">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#2E2D2D"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman" isBold="true"/>
+                </textElement>
+                <text><![CDATA[APPROVED]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="18" splitType="Stretch">
+            <textField textAdjust="StretchHeight" isBlankWhenNull="true">
+                <reportElement style="EvenRowStyle" stretchType="RelativeToTallestObject" x="0" y="0" width="40" height="18" isPrintWhenDetailOverflows="true" uuid="f338447c-0655-4f8f-a189-2207d619db4b">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight" isBlankWhenNull="true">
+                <reportElement style="EvenRowStyle" stretchType="RelativeToTallestObject" x="40" y="0" width="170" height="18" isPrintWhenDetailOverflows="true" uuid="21be9217-e166-4ae9-8597-54cd2bae6fd5">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <box leftPadding="3" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid"/>
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font fontName="Times New Roman"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{employeeName}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight" isBlankWhenNull="true">
+                <reportElement style="EvenRowStyle" stretchType="RelativeToTallestObject" x="560" y="0" width="70" height="18" isPrintWhenDetailOverflows="true" uuid="dc4e6779-c3d2-425b-ab0d-6e64ffde8dd0">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{isExtremeLate}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight" isBlankWhenNull="true">
+                <reportElement style="EvenRowStyle" stretchType="RelativeToTallestObject" x="630" y="0" width="70" height="18" isPrintWhenDetailOverflows="true" uuid="6310ff8b-910d-4201-ad35-2a5d74857eda">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{dayStatusFullName}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight" isBlankWhenNull="true">
+                <reportElement style="EvenRowStyle" stretchType="RelativeToTallestObject" x="210" y="0" width="70" height="18" isPrintWhenDetailOverflows="true" uuid="e84df73e-2959-49e1-8602-5e40290fa57c">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{punchInTime}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight" isBlankWhenNull="true">
+                <reportElement style="EvenRowStyle" stretchType="RelativeToTallestObject" x="280" y="0" width="70" height="18" isPrintWhenDetailOverflows="true" uuid="9552b0c4-72b1-43d4-9934-4df9bb3f947d">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{approvedPunchInTime}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight" isBlankWhenNull="true">
+                <reportElement style="EvenRowStyle" stretchType="RelativeToTallestObject" x="350" y="0" width="70" height="18" isPrintWhenDetailOverflows="true" uuid="0d296155-b09b-4725-bff9-04557528a5db">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{punchOutTime}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight" isBlankWhenNull="true">
+                <reportElement style="EvenRowStyle" stretchType="RelativeToTallestObject" x="420" y="0" width="70" height="18" isPrintWhenDetailOverflows="true" uuid="82bd9f34-c78c-42f5-807f-11e51097804c">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{approvedPunchOutTime}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight" isBlankWhenNull="true">
+                <reportElement style="EvenRowStyle" stretchType="RelativeToTallestObject" x="490" y="0" width="70" height="18" isPrintWhenDetailOverflows="true" uuid="2636a615-720b-490c-af2f-67b7e8eb56a2">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{isLate}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight" isBlankWhenNull="true">
+                <reportElement style="EvenRowStyle" stretchType="RelativeToTallestObject" x="700" y="0" width="100" height="18" isPrintWhenDetailOverflows="true" uuid="125a48b8-31c8-4ee0-9da1-865feafb9eaf">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman"/>
+                </textElement>
+            </textField>
+        </band>
+    </detail>
+    <summary>
+        <band height="18" splitType="Stretch">
+            <staticText>
+                <reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="40" height="18" isPrintWhenDetailOverflows="true" uuid="c6346073-def2-42f2-8df2-fc203e851a18">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman"/>
+                </textElement>
+                <text><![CDATA[Total]]></text>
+            </staticText>
+            <textField>
+                <reportElement stretchType="RelativeToTallestObject" x="560" y="0" width="70" height="18" isPrintWhenDetailOverflows="true" uuid="8a565190-d2c1-4828-92cb-050679efd727">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman"/>
+                </textElement>
+            </textField>
+            <staticText>
+                <reportElement stretchType="RelativeToTallestObject" x="630" y="0" width="170" height="18" isPrintWhenDetailOverflows="true" uuid="95a1105c-8dc7-42c4-8f87-07170f38cdde">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman"/>
+                </textElement>
+                <text><![CDATA[]]></text>
+            </staticText>
+            <textField>
+                <reportElement stretchType="RelativeToTallestObject" x="490" y="0" width="70" height="18" isPrintWhenDetailOverflows="true" uuid="cd0a2dec-6099-4a78-abf4-b769a69db4ee">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman"/>
+                </textElement>
+            </textField>
+            <staticText>
+                <reportElement stretchType="RelativeToTallestObject" x="40" y="0" width="450" height="18" isPrintWhenDetailOverflows="true" uuid="70588060-c40b-4f91-bb75-c14f8fbf6f02">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <box leftPadding="1" rightPadding="1">
+                    <topPen lineWidth="0.25" lineStyle="Solid"/>
+                    <leftPen lineWidth="0.25" lineStyle="Solid"/>
+                    <bottomPen lineWidth="0.25" lineStyle="Solid"/>
+                    <rightPen lineWidth="0.25" lineStyle="Solid"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman"/>
+                </textElement>
+                <text><![CDATA[]]></text>
+            </staticText>
+        </band>
+    </summary>
+</jasperReport>

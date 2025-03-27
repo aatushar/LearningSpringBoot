@@ -1,0 +1,5 @@
+# Created at 2025-03-13T17:22:22.433
+Boot Manifest-JAR contains absolute paths in classpath 'E:\Tushar-Zit\Spring Boot Project\Spring_Boot_Jasper_Report-main\Spring_Boot_Jasper_Report-main\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

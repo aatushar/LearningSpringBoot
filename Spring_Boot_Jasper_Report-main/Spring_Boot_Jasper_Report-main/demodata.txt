@@ -1,0 +1,12 @@
+-- Insert demo data into the products table
+INSERT INTO jasperreport.product (id, name, price, quantity) VALUES
+    (1, 'Product A', 10.99, 50),
+    (2, 'Product B', 20.99, 30),
+    (3, 'Product C', 5.99, 75),
+    (4, 'Product D', 15.49, 40),
+    (5, 'Product E', 8.99, 60),
+    (6, 'Product F', 12.99, 25),
+    (7, 'Product G', 18.99, 15),
+    (8, 'Product H', 6.49, 80),
+    (9, 'Product I', 14.99, 35),
+    (10, 'Product J', 9.99, 45);
